@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+</head>
+<body>
+
+<h2>User Information</h2>
+
+<form action="/user" method="post">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required maxlength="20"><br>
+
+    <label for="secondName">Second Name:</label>
+    <input type="text" id="secondName" name="secondName" required maxlength="15"><br>
+
+    <label for="patronymic">Patronymic:</label>
+    <input type="text" id="patronymic" name="patronymic" required maxlength="15"><br>
+
+    <label for="birthDate">Birth Date:</label>
+    <input type="date" id="birthDate" name="birthDate" required><br>
+
+    <label for="passportSeries">Passport Series:</label>
+    <input type="text" id="passportSeries" name="passportSeries" required maxlength="2"><br>
+
+    <label for="passportNumber">Passport Number:</label>
+    <input type="text" id="passportNumber" name="passportNumber" required maxlength="9"><br>
+
+    <label for="issuedBy">Issued By:</label>
+    <input type="text" id="issuedBy" name="issuedBy" required maxlength="45"><br>
+
+    <label for="dateOfIssuing">Date of Issuing:</label>
+    <input type="date" id="dateOfIssuing" name="dateOfIssuing" required><br>
+
+    <label for="idNumber">ID Number:</label>
+    <input type="text" id="idNumber" name="idNumber" required maxlength="14"><br>
+
+    <label for="birthPlace">Birth Place:</label>
+    <input type="text" id="birthPlace" name="birthPlace" required maxlength="45"><br>
+
+    <label for="residenceCity">Residence City:</label>
+    <input type="text" id="residenceCity" name="residenceCity" required maxlength="45"><br>
+
+    <label for="residenceAddress">Residence Address:</label>
+    <input type="text" id="residenceAddress" name="residenceAddress" required maxlength="45"><br>
+
+    <label for="linePhoneNumber">Line Phone Number:</label>
+    <input type="text" id="linePhoneNumber" name="linePhoneNumber" maxlength="45"><br>
+
+    <label for="mobilePhoneNumber">Mobile Phone Number:</label>
+    <input type="text" id="mobilePhoneNumber" name="mobilePhoneNumber" maxlength="45"><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" maxlength="45"><br>
+
+    <label for="occupation">Occupation:</label>
+    <input type="text" id="occupation" name="occupation" maxlength="45"><br>
+
+    <label for="jobTitle">Job Title:</label>
+    <input type="text" id="jobTitle" name="jobTitle" maxlength="45"><br>
+
+    <label for="familyStatus">Family Status:</label>
+    <input type="text" id="familyStatus" name="familyStatus" required maxlength="45"><br>
+
+    <label for="citizenship">Citizenship:</label>
+    <input type="text" id="citizenship" name="citizenship" required maxlength="45"><br>
+
+    <label for="handicap">Handicap:</label>
+    <input type="text" id="handicap" name="handicap" required maxlength="45"><br>
+
+    <label for="salary">Salary:</label>
+    <input type="number" id="salary" name="salary" step="0.01"><br>
+
+    <label for="conscript">Conscript:</label>
+    <select id="conscript" name="conscript" required>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select><br>
+
+    <!-- Add submit button -->
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

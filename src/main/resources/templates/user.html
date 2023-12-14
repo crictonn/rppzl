@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Пример страницы с данными пользователя</title>
+</head>
+<body>
+<h1>Добро пожаловать!</h1>
+<h2>Персональные данные пользователя:</h2>
+
+<div id="user-data">
+  <p><strong>Имя:</strong> <span id="first-name"></span></p>
+  <p><strong>Фамилия:</strong> <span id="last-name"></span></p>
+  <p><strong>Отчество:</strong> <span id="middle-name"></span></p>
+</div>
+
+<button id="credit-button">Кредит</button>
+<button id="deposit-button">Депозит</button>
+
+<!-- Подключение скрипта для получения данных из базы данных -->
+<script>
+  // Предполагается, что данные пользователя будут получены из базы данных и переданы в формате JSON
+  const userData = {
+    firstName: "Иван",
+    lastName: "Иванов",
+    middleName: "Иванович"
+  };
+
+  // Обновление значений на странице с данными пользователя
+  document.getElementById("first-name").innerText = userData.firstName;
+  document.getElementById("last-name").innerText = userData.lastName;
+  document.getElementById("middle-name").innerText = userData.middleName;
+
+  // Добавление обработчиков событий для кнопок
+  document.getElementById("credit-button").addEventListener("click", function() {
+    // Логика обработки нажатия кнопки "Кредит"
+    console.log("Нажата кнопка 'Кредит'");
+  });
+
+  document.getElementById("deposit-button").addEventListener("click", function() {
+    // Логика обработки нажатия кнопки "Депозит"
+    console.log("Нажата кнопка 'Депозит'");
+  });
+</script>
+</body>
+</html>

@@ -13,7 +13,7 @@
   <p><strong>Отчество:</strong> <span id="middle-name"></span></p>
 </div>
 
-<button id="credit-button">Кредит</button>
+<button id="credit-button" onclick="redirectToCredit()">Кредит</button>
 <button id="deposit-button" onclick="redirectToDeposit()">Депозит</button>
 
 <!-- Подключение скрипта для получения данных из базы данных -->
@@ -25,8 +25,10 @@
     middleName: "Иванович"
   };
   function redirectToDeposit() {
-    // Перенаправление на страницу "/deposit"
     window.location.href = "/user/deposit";
+  }
+  function redirectToCredit(){
+    window.location.href = "/user/credit"
   }
 
   // Обновление значений на странице с данными пользователя
@@ -34,15 +36,6 @@
   document.getElementById("last-name").innerText = userData.lastName;
   document.getElementById("middle-name").innerText = userData.middleName;
 
-  // Добавление обработчиков событий для кнопок
-  document.getElementById("credit-button").addEventListener("click", function() {
-    // Логика обработки нажатия кнопки "Кредит"
-    console.log("Нажата кнопка 'Кредит'");
-  });
-
-  document.getElementById("deposit-button").addEventListener("click", function() {
-    return "redirect:/deposit"
-  });
 </script>
 </body>
 </html>

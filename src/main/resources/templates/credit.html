@@ -1,10 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Оформление кредита</title>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+<h1>Оформление кредита</h1>
 
+<form id="loan-form">
+    <label for="amount">Сумма кредита:</label>
+    <input type="number" id="amount" required><br><br>
+
+    <label for="interest-rate">Процентная ставка (%):</label>
+    <input type="number" id="interest-rate" required><br><br>
+
+    <label for="term">Срок кредита (в месяцах):</label>
+    <input type="number" id="term" required><br><br>
+
+    <button type="submit">Оформить кредит</button>
+</form>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h2>Кредит успешно оформлен!</h2>
+        <button id="ok-button">Ок</button>
+        <button id="cancel-button">Отмена</button>
+    </div>
+</div>
+
+<!-- Подключение скрипта для обработки событий -->
+<script>
+    document.getElementById("loan-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Предотвращение отправки формы
+
+        // Получение значений из полей ввода
+        const amount = parseFloat(document.getElementById("amount").value);
+        const interestRate = parseFloat(document.getElementById("interest-rate").value);
+        const term = parseInt(document.getElementById("term").value);
+
+        // Валидация значений
+        if (isNaN(amount) || isNaN(interestRate) || isNaN(term)) {
+            alert("Пожалуйста, введите корректные значения для кредита.");
+            return;
+        }
+
+        // Отображение модального окна
+        document.getElementById("modal").style.display = "block";
+    });
+
+    document.getElementById("ok-button").addEventListener("click", function() {
+        // Логика сохранения данных в базу данных
+        const amount = parseFloat(document.getElementById("amount").value);
+        const interestRate = parseFloat(document.getElementById("interest-rate").value);
+        const term = parseInt(document.getElementById("term").value);
+
+        // Здесь можно добавить логику для сохранения данных в базу данных
+        console.log("Сумма кредита:", amount);
+        console.log("Процентная ставка:", interestRate);
+        console.log("Срок кредита:", term);
+
+        // Закрытие модального окна
+        document.getElementById("modal").style.display = "none";
+    });
+
+    document.getElementById("cancel-button").addEventListener("click", function() {
+        // Закрытие модального окна
+        document.getElementById("modal").style.display = "none";
+    });
+</script>
 </body>
 </html>
